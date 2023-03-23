@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuggyAppService", "BuggyAppService.csproj", "{F791060F-F960-449F-8EA8-A4308C46E32B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F791060F-F960-449F-8EA8-A4308C46E32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F791060F-F960-449F-8EA8-A4308C46E32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F791060F-F960-449F-8EA8-A4308C46E32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F791060F-F960-449F-8EA8-A4308C46E32B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C95EA50-C910-476B-925B-402AE4E435A0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "App Domain Unload";
+}
+
+<script type="text/javascript">
+    function GetTimeZoneOffset() {
+
+        var dot = ".";
+       
+    }
+
+</script>
+<h1>App Domain Unload</h1>
+<p> Click on button below to create a file localy in web.config </p>
+@*<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Button runat="server" id="btnCreateFile" Text="CreateFile" OnClick="btnCreateFile_click" />
+</asp:Content>*@
+
+@*asp-action="btnCreateFile_click"*@
+
+<p> This will trigger app domain unload due to FCN mode</p> </>
+<h1></h1>
+<p>you can set the in the web.config FCNmode='disabled' as workaround </p> </>
+<h1></h1>
+
+<a href="@Url.Action("Index","AppDomainUnload", new {id="x=createFile" })"
+   class="btn btn-primary btn-lg">Create File </a>
+
+
+
