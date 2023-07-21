@@ -1,0 +1,15 @@
+﻿@using Markdig;
+@{
+    ViewData["Title"] = "Env Variables";
+}
+
+<h1>Environment Variables</h1>
+<p></p>
+<h1></h1>
+@ViewData["EnvVariables"]
+<div>
+    @*@Markdown.Parse(@ViewData["EnvVariables"].ToString())*@
+    @Markdown.ToHtml(@ViewData["EnvVariables"].ToString())
+</div>
+
+

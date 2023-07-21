@@ -21,7 +21,7 @@ if (!app.Environment.IsDevelopment())
 string startupIssue = "false";
 try
 {
-     startupIssue = System.Environment.GetEnvironmentVariables()["APPSETTING_StartupIssue"].ToString();
+     startupIssue = System.Environment.GetEnvironmentVariables()["StartupIssue"].ToString();
 
 }
 catch(Exception ex)
