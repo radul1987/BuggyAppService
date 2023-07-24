@@ -15,3 +15,12 @@
 <h1>@ViewData["TimeTaken"]</h1>
 
 
+<p>You can click the Slow Request button to reproduce a slow request </p>
+<a href="@Url.Action("Index","SlowPage",new {id="time=5000" })" class="btn btn-primary btn-lg">Slow Request </a>
+
+
+<p>You can check the troubleshooting steps to find out the root cause for slowness</p>
+
+<a href="@Url.Action("SlowRequest","Troubleshooting")" class="btn btn-primary btn-lg">How to Troubleshoot Slow request </a>
+
+

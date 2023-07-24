@@ -6,19 +6,15 @@ namespace BuggyAppService.Controllers
     {
         public IActionResult Index()
         {
-         //   throw new OutOfMemoryException("svetooutofmemory");
-            //try
-            //{
+
+            return View();
+        }
+
+        public IActionResult Index2()
+        {
+
             ThisIsARecursiveFunctionUsedToTriggerAStackOVerflow();
-            //}
-            //catch (StackOverflowException ex)
-            //{
 
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
             return View();
         }
         private void ThisIsARecursiveFunctionUsedToTriggerAStackOVerflow()

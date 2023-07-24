@@ -6,8 +6,14 @@ namespace BuggyAppService.Controllers
     {
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult Index2()
+        {
             throw new ApplicationException("Throwing new application exception");
             return View();
         }
     }
+
 }
