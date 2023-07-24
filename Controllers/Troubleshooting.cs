@@ -24,5 +24,10 @@ namespace BuggyAppService.Controllers
         {
             return View();
         }
+
+        public IActionResult HighCPU()
+        {
+            return View();
+        }
     }
 }

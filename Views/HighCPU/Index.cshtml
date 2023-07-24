@@ -1,0 +1,40 @@
+﻿@model BuggyAppService.Models.HighCPU
+@{
+    ViewData["Title"] = "High CPU";
+}
+
+<h1>500 Error</h1>
+<h1>Time Taken:</h1>
+<h1>@ViewData["TimeTaken"]</h1>
+
+<p>You can click the high cpu button to reproduce high CPU </p>
+
+<a href="@Url.Action("Index","HighCPU",new {id="Concat" })" class="btn btn-primary btn-lg">HighCPU Concatenating String </a>
+
+
+
+
+<div class="myform">
+    <h1 class="display-4">High CPU using regex</h1>
+
+    <form asp-action="Index" method="post">
+        <div class="myforma">
+            <label for="exampleFormControlInput" class="form-label">Enter String for Regex mathc</label>
+            <input type="text" class="form-control" asp-for="Name" id="exampleFormControlInput" placeholder="ReproForHighCPU">
+           @* @Html.TextBoxFor(m => m.Name)*@
+
+        </div>
+        <div>
+            <p></p>
+            <button type="submit">Submit form</button>
+            <p></p>
+        </div>
+
+    </form>
+</div>
+
+
+
+<p>You can check the troubleshooting steps to find out the root cause for high CPU</p>
+
+<a href="@Url.Action("HighCPU","Troubleshooting")" class="btn btn-primary btn-lg">How to Troubleshoot High CPU </a>
