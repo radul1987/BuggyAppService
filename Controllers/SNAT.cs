@@ -50,8 +50,9 @@ namespace BuggyAppService.Controllers
 
             }
 
-            string execute = Request.Query["execute"];
-            if (execute == null)
+            string param = Request.Path.ToString();
+
+            if (param != null && !param.Contains("execute"))
             {
                 ViewData["PageContent"] = "Use the below button to make an outbound query to: " + url;
                 //}
