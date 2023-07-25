@@ -79,7 +79,7 @@ namespace BuggyAppService.Controllers
             var urlrequest = (url != null)? url : $"https://ratanas.net/SlowPage.aspx";
 
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(url);
+            client.BaseAddress = new Uri(urlrequest);
            // client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             HttpResponseMessage response = await client.GetAsync(urlrequest).ConfigureAwait(false);
