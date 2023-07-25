@@ -9,19 +9,19 @@
 
 <p>You can click the high cpu button to reproduce high CPU </p>
 
-<a href="@Url.Action("Index","HighCPU",new {id="Concat" })" class="btn btn-primary btn-lg">HighCPU Concatenating String </a>
+<a href="@Url.Action("Index","HighCPU",new {id="concat" })" class="btn btn-primary btn-lg">HighCPU Concatenating String </a>
 
 
 
 
-<div class="myform">
+@*<div class="myform">
     <h1 class="display-4">High CPU using regex</h1>
 
     <form asp-action="Index" method="post">
         <div class="myforma">
             <label for="exampleFormControlInput" class="form-label">Enter String for Regex mathc</label>
             <input type="text" class="form-control" asp-for="Name" id="exampleFormControlInput" placeholder="ReproForHighCPU">
-           @* @Html.TextBoxFor(m => m.Name)*@
+           @* @Html.TextBoxFor(m => m.Name)
 
         </div>
         <div>
@@ -31,7 +31,7 @@
         </div>
 
     </form>
-</div>
+</div>*@
 
 
 
