@@ -1,0 +1,18 @@
+﻿@model BuggyAppService.Models.HighCPU
+@{
+    ViewData["Title"] = "Snat Port Exhaustion";
+}
+
+<h1>SNAT port exhaustion</h1>
+<h2>@ViewData["PageContent"]</h2>
+<a href="@Url.Action("Index","SNAT",new {id="execute" })" class="btn btn-primary btn-lg">Make request </a>
+
+
+<p>You can check the troubleshooting steps to find out the root cause for SNAT port exhaustion</p>
+
+<a href="@Url.Action("SNAT","Troubleshooting")" class="btn btn-primary btn-lg">How to Troubleshoot SNAT port Exhaustion </a>
+
+
+
+<p> After adding the key for the slow outbound request you can use the a linux vm to make a load test using :</p>
+<p> ab -r -n 5000 -c 500 -s 120 https://buggyappservice.azurewebsites.net/TaskResult</p>

@@ -25,9 +25,6 @@ namespace BuggyAppService.Controllers
             //  string timeTakenQuery = Request.Query["time"];
             string param = Request.Path.ToString();
 
-
-
-
             if (param != null && param.Contains("Concat"))
             {
                 string str = string.Empty;
@@ -35,8 +32,9 @@ namespace BuggyAppService.Controllers
                 {
                     str += " Hello World";
                 }
+                ViewData["TimeTaken"] = $"Page Took {DateTime.Now.Subtract(dtStart).TotalSeconds}seconds";
             }
-            ViewData["TimeTaken"] = $"Page Took {DateTime.Now.Subtract(dtStart).TotalSeconds}seconds";
+          
             return View();
         }
 

@@ -29,5 +29,10 @@ namespace BuggyAppService.Controllers
         {
             return View();
         }
+        public IActionResult SNAT()
+        {
+            return View();
+        }
+
     }
 }
