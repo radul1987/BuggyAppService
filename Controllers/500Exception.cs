@@ -11,7 +11,8 @@ namespace BuggyAppService.Controllers
 
         public IActionResult Index2()
         {
-            throw new ApplicationException("Throwing new application exception");
+            string x = null;
+            string y = x.Split('x')[0];
             return View();
         }
     }

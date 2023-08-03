@@ -10,13 +10,45 @@
 
 </script>
 <h1>High CPU</h1>
-<p> Troubleshootiing guide forHigh CPU </p>
-<img src="~/images/CrashMonitoring.png" class="img-fluid">
-
-<p> Steps to troubleshoot with windbg </p>
-<p>how to collect dump</p>
-<p> How to check detector High CPU on app service </p>
-<h1></h1>
 
 
-
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                CPU Drill Down detector
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <h3> Verify the process that consumes high CPU : use CPU drill down detector </h3>
+                <img src="~/images/CPUDrillDown.png" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Collect Memory dump using Proactive CPU Monitoring
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <h3> Enable Proactive CPU Monitoring to collect a memory dump o crash</h3>
+                <img src="~/images/ProactiveCPUMonitoring.png" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Memory dump analysis
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Add windbg steps TO DO
+            </div>
+        </div>
+    </div>
+</div>
