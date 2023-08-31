@@ -15,6 +15,12 @@ namespace BuggyAppService.Controllers
             string y = x.Split('x')[0];
             return View();
         }
+
+        public IActionResult Index3()
+        {
+            return StatusCode(503);
+            //return View();
+        }
     }
 
 }
