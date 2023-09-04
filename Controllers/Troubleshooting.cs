@@ -34,5 +34,10 @@ namespace BuggyAppService.Controllers
             return View();
         }
 
+        public IActionResult HighMemory()
+        {
+            return View();
+        }
+
     }
 }

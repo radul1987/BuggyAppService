@@ -50,6 +50,7 @@ namespace BuggyAppService.Controllers
 
             }
 
+
             string param = Request.Path.ToString();
 
             if (param != null && !param.Contains("execute"))

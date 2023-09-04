@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "High Memory";
+}
+
+<h1>High Memory</h1>
+<h1>Time Taken:</h1>
+<h1>@ViewData["TimeTaken"]</h1>
+<h1>@ViewData["PhysicalMemory"]</h1>
+<h1>@ViewData["PrivateMemory"]</h1>
+
+<p>You can click the high Memory button to reproduce high Memory/Or refersh the page </p>
+<p>Every time the page is refresh 10000 strings with the same value are added to a static dictionnary </p>
+<a href="@Url.Action("Index","HighMemory")" class="btn btn-primary btn-lg">High Memory </a>
+
+
+<p>You can check the troubleshooting steps to find out the root cause for high Memory</p>
+
+<a href="@Url.Action("HighMemory","Troubleshooting")" class="btn btn-primary btn-lg">How to Troubleshoot High Memory </a>
