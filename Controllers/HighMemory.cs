@@ -13,11 +13,12 @@ namespace BuggyAppService.Controllers
             DateTime dtStart = DateTime.Now;
   
             string param = Request.Path.ToString();
-            string hugeString = new string('*', 510000);
+           // string hugeString = new string('*', 510000);
             int i = myDictionnary.Count;
             int x = myDictionnary.Count;
-            while (i < x+10000)
+            while (i < x+200)
             {
+                string hugeString = new string('*', 510000);
                 myDictionnary.TryAdd(i, hugeString);
               
                 i++;
