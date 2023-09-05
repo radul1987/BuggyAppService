@@ -5,5 +5,5 @@ This a .Net 6 application containing different scenarios with bugs for most comm
 
 #Deployement AppService 
 
+![alt text](https://github.com/radul1987/BuggyAppService/blob/master/wwwroot/images/DeployAppService.png)
 
-https://github.com/radul1987/BuggyAppService/blob/master/wwwroot/images/DeployAppService.png
