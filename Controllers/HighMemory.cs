@@ -11,23 +11,23 @@ namespace BuggyAppService.Controllers
         public IActionResult Index()
         {
             DateTime dtStart = DateTime.Now;
-  
+
             string param = Request.Path.ToString();
-           // string hugeString = new string('*', 510000);
+            // string hugeString = new string('*', 510000);
             int i = myDictionnary.Count;
             int x = myDictionnary.Count;
-            while (i < x+200)
+            while (i < x + 200)
             {
                 string hugeString = new string('*', 510000);
                 myDictionnary.TryAdd(i, hugeString);
-              
+
                 i++;
             }
             long processMemory = Process.GetCurrentProcess().WorkingSet64;
             long privateMemory = Process.GetCurrentProcess().PrivateMemorySize64;
-      
+
             ViewData["TimeTaken"] = $"Page Took {DateTime.Now.Subtract(dtStart).TotalSeconds}seconds - dictionary size {myDictionnary.Count}";
-           //  https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.privatememorysize64?view=net-7.0
+            //  https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.privatememorysize64?view=net-7.0
             ViewData["PhysicalMemory"] = $" Physical Memory usage = {ConvertBytesToMegabytes(processMemory)}Mb";
             ViewData["PrivateMemory"] = $" Private Memory usage = {ConvertBytesToMegabytes(privateMemory)}Mb";
 

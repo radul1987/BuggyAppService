@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace BuggyAppService.Controllers
 {
+    /// <summary>
+    /// Controller for troubleshooting guides 
+    /// </summary>
     public class Troubleshooting : Controller
     {
         public IActionResult Index()

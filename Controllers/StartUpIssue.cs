@@ -8,8 +8,6 @@ namespace BuggyAppService.Controllers
     {
         public IActionResult Index()
         {
-           
-
             return View();
         }
     }

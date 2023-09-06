@@ -19,13 +19,11 @@ namespace BuggyAppService.Controllers
         public IActionResult Index3()
         {
             return StatusCode(503);
-            //return View();
         }
 
         public IActionResult Index4()
         {
             return StatusCode(403);
-            //return View();
         }
     }
 

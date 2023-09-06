@@ -57,6 +57,44 @@
             </div>
         </div>
     </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Collect Memory Dump
+            </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <h3> Use AutoHeal to collect Memory Dump or Profiler Trace  </h3>
+                <img src="~/images/AuthHealSlowness.png" class="img-fluid">
+                <p>Or you can use auto heal to collect profiler trace or memory dump by creating a rule for slowness </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Memory Dump Analysis
+            </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <p>Once we have collected the memory dump using SlowPage scenario </p>
+                <p> https://buggyappservice.azurewebsites.net/SlowPage/Index/time=40000  </p>
+
+                <p>First thing we always check in the dump is the CLR version and establish if we are in a supported scenario.</p>
+                <p>lmvm clr       .net framework</p>
+                <p>lmvm coreclr   .net core</p>
+                <img src="~/images/DumpAnalysisLmvmCoreClr.png" class="img-fluid">
+                <p>Checking running requests:</p>
+                <img src="~/images/DumpAnalysisAspxcorepages.png" class="img-fluid">
+                <img src="~/images/DumpAnalysisCK2.png" class="img-fluid">
+                <img src="~/images/DumpAnalysisDecompileSlowPage.png" class="img-fluid">
+                <p>We can see that thread 34 stack, specifically BuggyAppService!BuggyAppService.Controllers.SlowPage.Index calls Thread.Sleep().</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 

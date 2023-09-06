@@ -13,27 +13,18 @@ namespace BuggyAppService.Controllers
         public IActionResult Index2()
         {
 
-            ThisIsARecursiveFunctionUsedToTriggerAStackOVerflow();
+            RecursiveMethod();
 
             return View();
         }
-        private void ThisIsARecursiveFunctionUsedToTriggerAStackOVerflow()
+        private void RecursiveMethod()
         {
-            //try
-            //{
-            for (int i = 0; i < 1000; i++)
+
+            for (int i = 0; i < 1500; i++)
             {
-                ThisIsARecursiveFunctionUsedToTriggerAStackOVerflow();
+                RecursiveMethod();
             }
-            //}
-            //catch (StackOverflowException ex)
-            //{
-            //   // Response.Write(ex.Message + "<-*******->" + ex.StackTrace);
-            //}
-            //catch (Exception ex)
-            //{
-            //   // Response.Write(ex.Message);
-            //}
+
         }
     }
 }

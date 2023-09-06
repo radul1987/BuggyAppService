@@ -8,25 +8,6 @@ namespace BuggyAppService.Controllers
 {
     public class SNAT : Controller
     {
-
-        //[HttpPost]
-        //public IActionResult Index(IFormCollection collection)
-        //{
-        //    //
-        //    string specificURL = Request.Form["name"].ToString();
-
-        //    DateTime dtStart = DateTime.Now;
-        //    int timetaken = 25;
-        //    string timeTakenQuery = Request.Query["time"];
-
-        //    if (timeTakenQuery != null)
-        //    {
-        //        timetaken = (timeTakenQuery != null) ? Int32.Parse(timeTakenQuery) : 5000;
-        //        string pageContent = MakeRequest(specificURL, timetaken).GetAwaiter().GetResult();
-        //        ViewData["PageContent"] = pageContent;
-        //    }
-        //    return View();
-        //}
         [HttpGet]
         public IActionResult Index()
         {
@@ -45,7 +26,7 @@ namespace BuggyAppService.Controllers
             }
             if (url == null) {
                 ViewData["PageContent"] = "The url is not specified. Please add the key 'slowrequest'='https://myslowrequesturl.com' .You can use https://ratanas.net/SlowPage.aspx?time=30000 for testing";
-                //}
+          
                 return View();
 
             }
@@ -56,21 +37,13 @@ namespace BuggyAppService.Controllers
             if (param != null && !param.Contains("execute"))
             {
                 ViewData["PageContent"] = "Use the below button to make an outbound query to: " + url;
-                //}
+             
                 return View();
             }
-            //this code is when we want to make the repro using AB linux
-            //ab - r - n 10000 - c 500 - s 120 https://buggyappservice.azurewebsites.net/TaskResult?time=30000
-            //DateTime dtStart = DateTime.Now;
-            //int timetaken = 25;
-            //string timeTakenQuery = Request.Query["time"];
-
-            //if (timeTakenQuery != null)
-            //{
-            //    timetaken = (timeTakenQuery != null) ? Int32.Parse(timeTakenQuery) : 5000;
+           
             string pageContent = MakeRequest(url).GetAwaiter().GetResult();
                 ViewData["PageContent"] = pageContent;
-            //}
+    
             return View();
         }
 
