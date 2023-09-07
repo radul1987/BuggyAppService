@@ -47,7 +47,17 @@
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                Add windbg steps TO DO
+                <br /> First thing we always check in the dump is the CLR version and establish if we are in a supported scenario.
+                <br /> <img src="~/images/DA_HighCPU_01.png" class="img-fluid">
+                <br /> Show thread pool status (threads running or not) + CPU usage. That is CPU usage on entire machine. It's not a must that w3wp.exe is taking all that CPU.
+                <br /> <img src="~/images/DA_HighCPU_02.png" class="img-fluid">
+                <br /> Looking at threads that are doing work:
+                <br /> <img src="~/images/DA_HighCPU_03.png" class="img-fluid">
+                <br /> Seems like all threads that are doing work are doing file operations, except threads 51. Let's have a closer look:
+                <br /> <img src="~/images/DA_HighCPU_04.png" class="img-fluid">
+                <br /> String concatenation, expensive operation CPU wise. Looking at the code:
+                <br /> <img src="~/images/DA_HighCPU_05.png" class="img-fluid">
+
             </div>
         </div>
     </div>
