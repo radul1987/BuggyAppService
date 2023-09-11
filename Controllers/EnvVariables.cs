@@ -20,7 +20,9 @@ namespace BuggyAppService.Controllers
                 //  str.Append("<p>" +e.Key + ":" + e.Value + "</p>");
                 Models.EnvVariables envVariables = new Models.EnvVariables();
                 envVariables.Key = e.Key.ToString();
-                if (!e.Key.ToString().ToLower().Contains("key") && !e.Key.ToString().ToLower().Contains("secret"))
+                if (!e.Key.ToString().ToLower().Contains("key") && !e.Key.ToString().ToLower().Contains("secret") 
+                    && !e.Value.ToString().ToLower().Contains("key") && !e.Value.ToString().ToLower().Contains("secret")
+                    && !e.Key.ToString().ToLower().Contains("connection"))
                 {
                     if (e.Value != null)
                     {
