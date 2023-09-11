@@ -20,11 +20,14 @@ namespace BuggyAppService.Controllers
                 //  str.Append("<p>" +e.Key + ":" + e.Value + "</p>");
                 Models.EnvVariables envVariables = new Models.EnvVariables();
                 envVariables.Key = e.Key.ToString();
-                if (e.Value != null)
+                if (!e.Key.ToString().ToLower().Contains("key") && !e.Key.ToString().ToLower().Contains("secret"))
                 {
-                    envVariables.Value = e.Value.ToString();
+                    if (e.Value != null)
+                    {
+                        envVariables.Value = e.Value.ToString();
+                    }
+                    listEnvVars.Add(envVariables);
                 }
-                listEnvVars.Add(envVariables);
             }
 
             ViewData["EnvVariables"] = str;
