@@ -9,14 +9,61 @@
     }
 
 </script>
+
+
 <h1>Crash</h1>
-<p> Troubleshootiing guide for Crash </p>
-<img src="~/images/CrashMonitoring.png" class="img-fluid">
 
-<p> Steps to troubleshoot with windbg </p>
 
-<p> How to check detector crash on app service </p>
-<h1></h1>
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Crash detector
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <h3> Verify if they process is crashing using Application Crashes detector </h3>
+                <img src="~/images/CrashDetector.png" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Collect Memory dump using Crash Monitoring feature
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <h3> Enable Crash Monitoring to collect a memory dump o crash</h3>
+                <img src="~/images/CrashMonitoring.png" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Memory dump analysis
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <br /> A crash dump will open on the context of the thread that caused the crash. This case, thread 32.
+                <br /> <img src="~/images/DA_Crash_01.png" class="img-fluid">
+                <br /> First thing we always check in the dump is the CLR version and establish if we are in a supported scenario.
+                <br /> <img src="~/images/DumpAnalysisLmvmCoreClr.png" class="img-fluid">
+                <br /> Looking at the call stack of thread 32:
+                <br /> <img src="~/images/DA_Crash_02.png" class="img-fluid">
+                <br /> We see the same method called over and over making the stack to overflow.
+                <br /> Checking code we can see the recursive call that filled the stack.
+
+                <br /> <img src="~/images/DA_Crash_03.png" class="img-fluid">
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

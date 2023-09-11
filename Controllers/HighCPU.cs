@@ -7,7 +7,7 @@ namespace BuggyAppService.Controllers
     {
         public IActionResult Index()
         {
-            DateTime dtStart = DateTime.Now;
+            DateTime dateStart = DateTime.Now;
             //  string timeTakenQuery = Request.Query["time"];
             string param = Request.Path.ToString();
 
@@ -18,7 +18,7 @@ namespace BuggyAppService.Controllers
                 {
                     str += " Hello World";
                 }
-                ViewData["TimeTaken"] = $"Page Took {DateTime.Now.Subtract(dtStart).TotalSeconds}seconds";
+                ViewData["TimeTaken"] = $"Time Taken {DateTime.Now.Subtract(dateStart).TotalSeconds}seconds";
             }
           
             return View();

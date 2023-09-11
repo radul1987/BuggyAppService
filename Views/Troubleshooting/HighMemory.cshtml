@@ -16,26 +16,29 @@
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                CPU Drill Down detector
+                Memory Drill Down Detector
             </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <h3> Verify the process that consumes high CPU : use CPU drill down detector </h3>
-                <img src="~/images/CPUDrillDown.png" class="img-fluid">
+                <h3> Identify the process that consumes high Memory : use Memory Drill Down detector </h3>
+                @* <img src="~/images/CPUDrillDown.png" class="img-fluid"> *@
             </div>
         </div>
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Collect Memory dump using Proactive CPU Monitoring
+                Collect Memory dump manually or using Autoheal feature 
             </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <h3> Enable Proactive CPU Monitoring to collect a memory dump o crash</h3>
-                <img src="~/images/ProactiveCPUMonitoring.png" class="img-fluid">
+                <p>We should collect multiple dumps to identify a memory leak: 
+                <p>Ex :1,2,3 GB </p>
+
+                <p>For this scenario we are going to collect at 700 and 1500 mb </p>
+              @*   <img src="~/images/ProactiveCPUMonitoring.png" class="img-fluid"> *@
             </div>
         </div>
     </div>
@@ -47,7 +50,33 @@
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                Add windbg steps TO DO
+             <br /> Usually for memory issues we take at least 2-3 dumps to check memory evolution in time.
+             <br />From the beginning we can see that the dumps size difference:
+
+                <br /> <img src="~/images/DA_HighMemory_01.png" class="img-fluid">
+                <br /> First thing we always check in the dump is the CLR version and establish if we are in a supported scenario.
+                <br /> <img src="~/images/DumpAnalysisLmvmCoreClr.png" class="img-fluid">
+                <br /> Next I'll do a side by side comparison between 1st dump and 2nd dump.
+                 <br /> Why are we checking CPU even though we are investigating high MEM usage ? GC.
+
+                <br /> <img src="~/images/DA_HighMemory_02.png" class="img-fluid">
+                <br />  A short info about <b>!address</b> command              
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/-address" class="link-info">- address (WinDbg) - Windows drivers | Microsoft Learn</a>
+ <br /> We can see the memory is filled up with big String objects. 
+ <br /> Those objects go direct to LOH on creation     
+ <a href="https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/large-object-heap" class="link-info"> Large object heap (LOH) on Windows - .NET | Microsoft Learn</a>
+ <br /> They will never be collected by GC, unless specifically told to. <a href=" https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals" class="link-info">  Fundamentals of garbage collection - .NET | Microsoft Learn</a>
+
+
+  <br /> 
+ <br /> Specifically in:
+	 <br /> - 1st dump there were 200 objects measuring 204,004,400 bytes
+	 <br /> - 2nd dump there were 1,000 objects measuring 1,020,022,000bytes (exactly 5 times the number and the size)
+      <br /> 
+ <br /> We can inspect 1 object in the 1st dump and share the outcome . The owner of the code should know where in the code are those huge strings created.
+                <br /> <img src="~/images/DA_HighMemory_03.png" class="img-fluid">
+
+                 <br />Analysis can go further, but that's not the purpose of this example.
             </div>
         </div>
     </div>

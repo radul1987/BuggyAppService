@@ -9,17 +9,98 @@
     }
 
 </script>
-<h1>500error</h1>
-<p> Troubleshootiing guide for 500 error </p>
-<h1></h1>
-<p> Detailed errors </p>
-<p> Stdout logs</p>
-<p> Freb </p>
-<p> Http Server Error detector  </p>
-<p> App Insights  </p>
-<p> application event log detector </p>
+<h1>5xx Errors</h1>
 
 
 
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Detailed errors
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Enable ASPNETCORE_DETAILEDERRORS=true in app service configuration/app settings to enable detailed error in the page
 
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Stdout logs
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               Enable Stdout logs in the web.config
+                <a href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/logging-and-diagnostics?view=aspnetcore-7.0" class="link-info">STDOUT</a>
+               <br /> <img src="~/images/WebConfigSTDOUT.png" class="img-fluid">
+         
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Enable Failed Request Tracing(FREB)
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <img src="~/images/FREB.png" class="img-fluid">
+                <br /> 
+                Failed Request logs are created under the folder :C:\home\LogFiles\W3WSVCxxxxxxx
+                <img src="~/images/FREBKudu.png" class="img-fluid">
+                <br /> Enable custom status code freb :
+                <br /><a href="https://www.thebestcsharpprogrammerintheworld.com/2013/05/09/enabling-failed-request-logging-on-a-windows-azure-web-site/" class="link-info">Custom Status code FREB</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Check the Http Server Errors Detector 
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <img src="~/images/DetectorHttpServerErrors.png" class="img-fluid">
+                <br />
+            </div>
+        </div>
+
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Check Application Insights Failures
+            </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <img src="~/images/AIFailures.png" class="img-fluid">
+                <br />
+            </div>
+        </div>
+
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Check Application Event Logs detector
+            </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <img src="~/images/DetectorApplicationEventLogs.png" class="img-fluid">
+                <br />
+            </div>
+        </div>
+
+    </div>
+</div>
 

@@ -10,7 +10,7 @@ namespace BuggyAppService.Controllers
         static ConcurrentDictionary<int, string> myDictionnary = new ConcurrentDictionary<int, string>();
         public IActionResult Index()
         {
-            DateTime dtStart = DateTime.Now;
+            DateTime dateStart = DateTime.Now;
 
             string param = Request.Path.ToString();
             // string hugeString = new string('*', 510000);
@@ -26,7 +26,7 @@ namespace BuggyAppService.Controllers
             long processMemory = Process.GetCurrentProcess().WorkingSet64;
             long privateMemory = Process.GetCurrentProcess().PrivateMemorySize64;
 
-            ViewData["TimeTaken"] = $"Page Took {DateTime.Now.Subtract(dtStart).TotalSeconds}seconds - dictionary size {myDictionnary.Count}";
+            ViewData["TimeTaken"] = $"Time Taken {DateTime.Now.Subtract(dateStart).TotalSeconds}seconds - dictionary size {myDictionnary.Count}";
             //  https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.privatememorysize64?view=net-7.0
             ViewData["PhysicalMemory"] = $" Physical Memory usage = {ConvertBytesToMegabytes(processMemory)}Mb";
             ViewData["PrivateMemory"] = $" Private Memory usage = {ConvertBytesToMegabytes(privateMemory)}Mb";

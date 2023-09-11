@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Health Check";
+}
+<script type="text/javascript">
+    function GetTimeZoneOffset() {
+
+        var dot = ".";
+       
+    }
+
+</script>
+<h1>Health Check</h1>
+<p>Enable Health check feature for a page that doesn't exists "/healthCheck404" </p>
+<img src="~/images/HealthCheckInstancesWrongPath.png" class="img-fluid">
+
+<p> We can see the server isn't healthy </p>
+<img src="~/images/HealthCheckInstancesUnhealthy.png" class="img-fluid">
+
+<p> The instance will be considered healthy only if the status code is between 200-299</p>
+@*   *@
+<a href="https://learn.microsoft.com/en-us/azure/app-service/monitor-instances-health-check?tabs=dotnet#what-app-service-does-with-health-checks" class="link-info">App Service Health Check Documentation</a>
+<p>We can enabled the rewrite rule from web.config to always answer with a 200 if the User Agent is Health Check</p>
+<img src="~/images/HealthCheckWebConfigEnableRule.png" class="img-fluid">
+@* 
+<p>You can check the troubleshooting steps to find out the root cause </p>
+
+<a href="@Url.Action("HealthCheck","Troubleshooting")" class="btn btn-primary btn-lg">How to Troubleshoot Health Check </a> *@
+
+

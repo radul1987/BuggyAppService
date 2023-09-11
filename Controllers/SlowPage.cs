@@ -22,7 +22,7 @@ namespace BuggyAppService.Controllers
 
             if (timeFromURL != null)
             {
-                DateTime dtStart = DateTime.Now;
+                DateTime dateStart = DateTime.Now;
                 int timetaken = 25;
 
 
@@ -30,7 +30,7 @@ namespace BuggyAppService.Controllers
 
                 System.Threading.Thread.Sleep(timetaken);
                 //string x = Environment.GetEnvironmentVariable("Test10");
-                ViewData["TimeTaken"] = "Page took " + DateTime.Now.Subtract(dtStart).TotalMilliseconds + " ms to load ";
+                ViewData["TimeTaken"] = "TimeTaken " + DateTime.Now.Subtract(dateStart).TotalSeconds + " sec";
             }
             return View();
         }
