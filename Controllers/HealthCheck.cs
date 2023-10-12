@@ -13,7 +13,7 @@ namespace BuggyAppService.Controllers
             string healthCheckIssue = "false";
             try
             {
-                healthCheckIssue = System.Environment.GetEnvironmentVariables()["StartupIssue"].ToString();
+                healthCheckIssue = System.Environment.GetEnvironmentVariables()["HealthCheckIssue"].ToString();
 
             }
             catch (Exception ex)
