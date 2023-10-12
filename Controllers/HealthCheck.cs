@@ -10,7 +10,7 @@ namespace BuggyAppService.Controllers
         public IActionResult Index()
         {
 
-            string healthCheckIssue = "false";
+            string healthCheckIssue = "on";
             try
             {
                 healthCheckIssue = System.Environment.GetEnvironmentVariables()["HealthCheckIssue"].ToString();
@@ -21,7 +21,7 @@ namespace BuggyAppService.Controllers
 
             }
 
-            if (healthCheckIssue.ToLower() == "true") {
+            if (healthCheckIssue.ToLower() == "on") {
               //  numberOfFailures++;
                 throw new Exception("induced health check issue due to the key HealthCheckIssue=true");
             }
