@@ -6,13 +6,24 @@ namespace BuggyAppService.Controllers
 {
     public class HealthCheck : Controller
     {
-        static int numberOfFailures = 0;
+       // static int numberOfFailures = 0;
         public IActionResult Index()
         {
 
-            if (numberOfFailures < 10) {
-                numberOfFailures++;
-                throw new Exception("induced 10 errors for health check feature when app is starting");
+            string healthCheckIssue = "false";
+            try
+            {
+                healthCheckIssue = System.Environment.GetEnvironmentVariables()["StartupIssue"].ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            if (healthCheckIssue.ToLower() == "true") {
+              //  numberOfFailures++;
+                throw new Exception("induced health check issue due to the key HealthCheckIssue=true");
             }
           
             return View();
