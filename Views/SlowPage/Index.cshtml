@@ -8,7 +8,14 @@
        
     }
 
+    function radu() {
+        fetch("https://ratanas.net/SlowPage.aspx?time=30000 ", {
+            method: "GET" // default, so we can ignore
+        })
+    }
+
 </script>
+<input type="button" value="Slow Call Javascript" onclick="radu();">
 <h1>Slow Page</h1>
 <p>You can pass the time taken in ms for the request in the url SlowPage/Index/time=30000</p>
 <h1>Time Taken:</h1>

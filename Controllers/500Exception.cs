@@ -43,6 +43,7 @@ namespace BuggyAppService.Controllers
                     {
                         Console.WriteLine(line);
                         line += reader.ReadLine();
+                        break;
                     }
                 }
 
