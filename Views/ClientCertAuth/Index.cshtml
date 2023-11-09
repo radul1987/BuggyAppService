@@ -13,9 +13,15 @@
         <label for="formFile" class="form-label">Select certificate (*.pfx)</label>
         <input class="form-control" type="file" id="formFile" name="postedFile">
     </div>
+     
+    <label for="formFile" class="form-label">Certificate password:</label>
+    <input class="form-control" type="password" placeholder="Certificate password:" aria-label="password" name="certpass">
+    <br />
 
+    <label for="formFile" class="form-label">Endpoint URL:</label>
     <input class="form-control" type="text" placeholder="Paste URL here:" aria-label="Path to PFX:" name="url">
     <br />
+
     <button type="submit" class="btn btn-primary mb-3">Send request</button>
     <br/>
     
