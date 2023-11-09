@@ -33,7 +33,6 @@ namespace BuggyAppService.Controllers
                 //postStream.Write(postBytes, 0, postBytes.Length);
                 //postStream.Flush();
                 //postStream.Close();
-                // yabadabadooo2232223
                 WebResponse resp = req.GetResponse();
                 string line = "";
                 Stream stream = resp.GetResponseStream();
