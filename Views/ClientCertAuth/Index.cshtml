@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "ClientCertAuth";
+}
+<script type="text/javascript">
+       
+</script>
+
+<h1>Client Certificate Authentication</h1>
+<p>Select a certificate and paste URL in the text box</p>
+
+<form method="post" enctype="multipart/form-data" asp-controller="ClientCertAuth" asp-action="Index">
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Select certificate (*.pfx)</label>
+        <input class="form-control" type="file" id="formFile" name="postedFile">
+    </div>
+
+    <input class="form-control" type="text" placeholder="Paste URL here:" aria-label="Path to PFX:" name="url">
+    <br />
+    <button type="submit" class="btn btn-primary mb-3">Send request</button>
+    <br/>
+    
+    <br />
+    <span>@Html.Raw(ViewBag.Message)</span>
+</form>
+
+
+<h3>Request status: @ViewData["RequestStatus"]</h3>
+
+
+
+
+
