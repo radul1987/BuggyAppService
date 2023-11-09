@@ -17,10 +17,11 @@ namespace BuggyAppService.Controllers
                 {
                     btnCreateFile();
                 }
+                AppDomain.Unload(AppDomain.CurrentDomain);
             }
-            catch
+            catch (Exception e)
             {
-
+                ViewData["RequestStatus"] = e.Message;
             }
             return View();
         }

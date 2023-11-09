@@ -39,6 +39,7 @@ namespace BuggyAppService.Controllers
                     HttpWebRequest req = (HttpWebRequest)WebRequest.Create(host);
                     req.AllowAutoRedirect = true;
                     req.ClientCertificates = certificates;
+                    string certSubject = certificates[0].Subject;
                     req.Method = "GET";
 
                     WebResponse resp = req.GetResponse();
@@ -59,7 +60,7 @@ namespace BuggyAppService.Controllers
                     //                        respStream.Close();
                     //                        ViewData["RequestStatus"] = line;
                     //                    }
-                    ViewData["RequestStatus"] = x;
+                    ViewData["RequestStatus"] = x + " "+ certSubject;
                 }
             }
             catch (Exception e)
