@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.4" />
     <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="23.1.0" />
     <PackageReference Include="StackExchange.Redis" Version="2.6.96" />
   </ItemGroup>
 
@@ -22,6 +23,12 @@
     <Content Update="wwwroot\PrintConnectionSummary.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="applicationHost.xdt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
