@@ -57,9 +57,9 @@ namespace BuggyAppService.Controllers
 
             try
             {
-                //System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12 | System.Net.SecurityProtocolType.Tls13 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
+                System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12 ;
+                // var response = httpClient.PostAsync("https://dmztst.autostrade.it/mga/sps/oauth/oauth20/token", content).Result;
                 var response = httpClient.PostAsync("https://dmztst.autostrade.it/mga/sps/oauth/oauth20/token", content).Result;
-
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = response.Content.ReadAsStringAsync().Result;
